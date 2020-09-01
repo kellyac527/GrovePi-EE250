@@ -48,15 +48,15 @@ def setRGB(r,g,b):
     bus.write_byte_data(DISPLAY_RGB_ADDR,3,g)
     bus.write_byte_data(DISPLAY_RGB_ADDR,2,b)
 
-potentiometer = 0
-grovepi.pinMode(potentiometer, "INPUT")
+
 
 """This if-statement checks if you are running this python file directly. That 
 is, if you run `python3 grovepi_sensors.py` in terminal, this if-statement will 
 be true"""
 if __name__ == '__main__':
     PORT = 4    # D4
-
+    potentiometer = 0
+	grovepi.pinMode(potentiometer, "INPUT")
     while True:
         #So we do not poll the sensors too quickly which may introduce noise,
         #sleep for a reasonable time of 200ms between each iteration.
