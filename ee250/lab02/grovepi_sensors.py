@@ -62,6 +62,6 @@ if __name__ == '__main__':
 		#sleep for a reasonable time of 200ms between each iteration.
 		time.sleep(0.2)
 		#sensor_value = grovepi.analogRead(potentiometer)
-		print("sensor value ", sensor_value)
+		#print("sensor value ", sensor_value)
 		setRGB(0,128,50)
 		print(grovepi.ultrasonicRead(PORT))
