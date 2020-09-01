@@ -57,6 +57,8 @@ be true"""
 if __name__ == '__main__':
 	PORT = 4
 	potentiometer = 0
+	grovepi.pinMode(potentiometer,"INPUT")
+	time.sleep(1)
 
 	while True:
 		#So we do not poll the sensors too quickly which may introduce noise,
@@ -66,3 +68,4 @@ if __name__ == '__main__':
 		print("sensor value ", sensor_value)
 		setRGB(0,128,50)
 		print(grovepi.ultrasonicRead(PORT))
+
