@@ -60,6 +60,13 @@ if __name__ == '__main__':
         #So we do not poll the sensors too quickly which may introduce noise,
         #sleep for a reasonable time of 200ms between each iteration.
         time.sleep(0.2)
+        try: 
+        	print ultrasonicRead(ultrasonic_ranger)
+        except TypeError: 
+        	print "Error"
+        except IOError:
+        	print "Error"
+
         setRGB(0,128,52)
 
         print(grovepi.ultrasonicRead(PORT))
