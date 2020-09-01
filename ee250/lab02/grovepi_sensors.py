@@ -23,6 +23,7 @@ sys.path.append('../../Software/Python/')
 sys.path.append('../../Software/Python/grove_rgb_lcd')
 
 from grovepi import * 
+import grovepi
 
 if sys.platform == 'uwp':
     import winrt_smbus as smbus
