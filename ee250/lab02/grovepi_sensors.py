@@ -55,8 +55,9 @@ is, if you run `python3 grovepi_sensors.py` in terminal, this if-statement will
 be true"""
 if __name__ == '__main__':
     PORT = 4    # D4
-    potentiometer = 0
-	grovepi.pinMode(potentiometer, "INPUT")
+	potentiometer = 0
+	grovepi.pinMode(potentiometer,"INPUT")
+	
     while True:
         #So we do not poll the sensors too quickly which may introduce noise,
         #sleep for a reasonable time of 200ms between each iteration.
