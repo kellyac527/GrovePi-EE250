@@ -65,9 +65,6 @@ if __name__ == '__main__':
 			time.sleep(.01)
 		read = grovepi.ultrasonicRead(PORT)
 		print(read)
-		setText(sensor_value)
-		setText("cm")
-		setText("\n")
-		setText(read)
-		setText(" cm")
+		text = str(sensor_value) + "cm\n" + str(read) + "cm"
+		setText(text)
 
