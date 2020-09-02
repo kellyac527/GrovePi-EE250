@@ -65,6 +65,10 @@ if __name__ == '__main__':
 			time.sleep(.01)
 		read = grovepi.ultrasonicRead(PORT)
 		print(read)
-		text = str(sensor_value) + "cm\n" + str(read) + "cm"
-		setText(text)
+		textLn1 = str(sensor_value) + "cm"
+		setText(textLn1)
+		if (read < sensor_value ):
+			setText("OBJ PRES")
+		textLn2 = "\n" + str(read) + "cm"
+		setText(textLn2)
 
