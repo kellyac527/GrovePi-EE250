@@ -1,8 +1,9 @@
 """ EE 250L Lab 02: GrovePi Sensors
 
 List team members here.
-
+Kelly Chan
 Insert Github repository link here.
+https://github.com/kellyac527/GrovePi-EE250-KC/tree/lab02
 """
 
 """python3 interpreters in Ubuntu (and other linux distros) will look in a 
@@ -53,7 +54,6 @@ if __name__ == '__main__':
 	potentiometer = 0
 	grovepi.pinMode(potentiometer,"INPUT")
 	time.sleep(1)
-	c = 0
 	setText("")
 	while True:
 		#So we do not poll the sensors too quickly which may introduce noise,
@@ -61,7 +61,6 @@ if __name__ == '__main__':
 		time.sleep(0.2)
 		sensor_value = grovepi.analogRead(potentiometer)%517
 		print("sensor value ", sensor_value)
-		setRGB(255-c,255,255-c)
 		c+=7
 		if c == 255:
 			c = 0
@@ -70,8 +69,10 @@ if __name__ == '__main__':
 		textLn1 = str(sensor_value) + "cm"
 		if (read < sensor_value ):
 			textLn1 += " OBJ PRES"
+			setRGB(255,0,0)
 		else:
 			textLn1+="           "
+			setRGB(0,255,0)
 		textLn2 = "\n" + str(read) + "cm"
 		setText_norefresh(textLn1 + textLn2)
 
