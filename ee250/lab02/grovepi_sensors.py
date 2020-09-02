@@ -24,6 +24,7 @@ sys.path.append('../../Software/Python/grove_rgb_lcd')
 
 from grovepi import * 
 import grovepi
+from grove_rgb_lcd import *
 
 if sys.platform == 'uwp':
     import winrt_smbus as smbus
@@ -66,9 +67,9 @@ if __name__ == '__main__':
 		time.sleep(0.2)
 		sensor_value = grovepi.analogRead(potentiometer)
 		print("sensor value ", sensor_value)
-    	for c in range(0,255):
-        	setRGB(255-c,255,255-c)
-        	time.sleep(.01)
+		for c in range(0,255):
+			setRGB(255-c,255,255-c)
+			time.sleep(.01)
 		read = grovepi.ultrasonicRead(PORT)
 		print(read)
 		setText(sensor_value, " cm" )
