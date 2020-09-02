@@ -66,7 +66,9 @@ if __name__ == '__main__':
 		time.sleep(0.2)
 		sensor_value = grovepi.analogRead(potentiometer)
 		print("sensor value ", sensor_value)
-		setRGB(0,128,50)
+    	for c in range(0,255):
+        	setRGB(255-c,255,255-c)
+        	time.sleep(.01)
 		read = grovepi.ultrasonicRead(PORT)
 		print(read)
 		setText(sensor_value, " cm" )
