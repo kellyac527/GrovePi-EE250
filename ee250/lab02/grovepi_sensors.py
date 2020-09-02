@@ -53,22 +53,26 @@ if __name__ == '__main__':
 	potentiometer = 0
 	grovepi.pinMode(potentiometer,"INPUT")
 	time.sleep(1)
-
+	c = 0
+	setText("")
 	while True:
 		#So we do not poll the sensors too quickly which may introduce noise,
 		#sleep for a reasonable time of 200ms between each iteration.
 		time.sleep(0.2)
-		sensor_value = grovepi.analogRead(potentiometer)
+		sensor_value = grovepi.analogRead(potentiometer)%517
 		print("sensor value ", sensor_value)
-		for c in range(0,255):
-			setRGB(255-c,255,255-c)
-			time.sleep(.01)
+		setRGB(255-c,255,255-c)
+		c+=10
+		if c == 255:
+			c = 0
 		read = grovepi.ultrasonicRead(PORT)
 		print(read)
 		textLn1 = str(sensor_value) + "cm"
-		setText(textLn1)
 		if (read < sensor_value ):
-			setText("OBJ PRES")
+			textLn1 += " OBJ PRES"
+		else:
+			textLn1+="           "
 		textLn2 = "\n" + str(read) + "cm"
-		setText(textLn2)
+		setText_norefresh(textLn1 + textLn2)
+
 
