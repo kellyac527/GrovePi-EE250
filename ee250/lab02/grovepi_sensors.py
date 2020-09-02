@@ -42,13 +42,6 @@ else:
 DISPLAY_RGB_ADDR = 0x62
 DISPLAY_TEXT_ADDR = 0x3e
 
-def setRGB(r,g,b):
-    bus.write_byte_data(DISPLAY_RGB_ADDR,0,0)
-    bus.write_byte_data(DISPLAY_RGB_ADDR,1,0)
-    bus.write_byte_data(DISPLAY_RGB_ADDR,0x08,0xaa)
-    bus.write_byte_data(DISPLAY_RGB_ADDR,4,r)
-    bus.write_byte_data(DISPLAY_RGB_ADDR,3,g)
-    bus.write_byte_data(DISPLAY_RGB_ADDR,2,b)
 
 
 
@@ -72,6 +65,9 @@ if __name__ == '__main__':
 			time.sleep(.01)
 		read = grovepi.ultrasonicRead(PORT)
 		print(read)
-		setText(sensor_value, " cm" )
-		setText("/n", read, " cm")
+		setText(sensor_value)
+		setText("cm")
+		setText("\n")
+		setText(read)
+		setText(" cm")
 
