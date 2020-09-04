@@ -61,9 +61,6 @@ if __name__ == '__main__':
 		time.sleep(0.2)
 		sensor_value = grovepi.analogRead(potentiometer)%517
 		print("sensor value ", sensor_value)
-		c+=7
-		if c == 255:
-			c = 0
 		read = grovepi.ultrasonicRead(PORT)
 		print(read)
 		textLn1 = str(sensor_value) + "cm"
