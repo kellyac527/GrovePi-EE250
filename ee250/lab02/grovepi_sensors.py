@@ -60,9 +60,7 @@ if __name__ == '__main__':
 		#sleep for a reasonable time of 200ms between each iteration.
 		time.sleep(0.2)
 		sensor_value = grovepi.analogRead(potentiometer)%517
-		print("sensor value ", sensor_value)
 		read = grovepi.ultrasonicRead(PORT)
-		print(read)
 		textLn1 = str(sensor_value) + "cm"
 		if (read < sensor_value ):
 			textLn1 += " OBJ PRES"
